@@ -1,15 +1,19 @@
 const arr=[];
 
+//Constructor for book object
 function book(name, author){
     this.name=name;
     this.author=author;
     this.sta=false;
 }
+
+//initial query selectors
 let addBookButton = document.querySelector(".addBook");
 let table = document.querySelector(".tab");
 
 addBookButton.addEventListener("click", addBookToLibrary);
 
+//Function to create a book object and add it to the library(array)
 function addBookToLibrary(){
     let bookN=prompt("Enter Book name!!");
     if(bookN.length<1) return;
@@ -21,11 +25,13 @@ function addBookToLibrary(){
     update();
 }
 
+//Function to remove a book
 function removeBook(){
     arr.splice(this.parentElement.parentElement.id, 1);
     update();
 }
 
+//Function to toggle read status of any book
 function toggleR(){
     if(arr[this.parentElement.parentElement.id].sta){
         arr[this.parentElement.parentElement.id].sta=false;
@@ -39,6 +45,8 @@ function toggleR(){
     }
 }
 
+//Function to create and add respective table rows for every book in library
+//Called in update function
 function createRow(i){
     let temp=document.createElement("tr");
     temp.setAttribute("id", i);
@@ -81,6 +89,7 @@ function createRow(i){
     table.appendChild(temp);
 }
 
+//Function to update table of books every time a book is added or removed
 function update() {
     while(table.childElementCount>1){
         table.removeChild(table.lastChild);
