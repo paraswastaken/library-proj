@@ -33,3 +33,7 @@ html {
   caption {
     padding: 10px;
   }
+
+  .read {
+    background-color: aqua;
+  }
