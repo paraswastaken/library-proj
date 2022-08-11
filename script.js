@@ -3,7 +3,7 @@ const arr=[];
 function book(name, author){
     this.name=name;
     this.author=author;
-    this.sta=0;
+    this.sta=false;
 }
 let addBookButton = document.querySelector(".addBook");
 let table = document.querySelector(".tab");
@@ -27,15 +27,15 @@ function removeBook(){
 }
 
 function toggleR(){
-    if(arr[this.parentElement.parentElement.id].sta==0){
-        arr[this.parentElement.parentElement.id].sta=1;
-        this.classList.toggle('read');
-        this.textContent="Read";
-    }
-    else{
-        arr[this.parentElement.parentElement.id].sta=0;
+    if(arr[this.parentElement.parentElement.id].sta){
+        arr[this.parentElement.parentElement.id].sta=false;
         this.classList.toggle('read');
         this.textContent="Not Read";
+    }
+    else{
+        arr[this.parentElement.parentElement.id].sta=true;
+        this.classList.toggle('read');
+        this.textContent="Read";
     }
 }
 
@@ -55,13 +55,21 @@ function createRow(i){
     t2 = document.createElement("td");
     t2.textContent=arr[i].author;
     temp.appendChild(t2);
+
+
     t2 = document.createElement("td");
     let t3 = document.createElement("button");
-    t3.textContent="Not Read";
+    let txt = (arr[i].sta)?"Read":"Not Read";
+    t3.textContent=txt;
+    if(arr[i].sta){
+        t3.classList.toggle('read');
+    }
     t3.addEventListener("click", toggleR);
-    t3.setAttribute("class", "toggleStat");
+    t3.classList.add("toggleB");
     t2.appendChild(t3);
     temp.appendChild(t2);
+
+
     t2 = document.createElement("td");
     t3 = document.createElement("button");
     t3.textContent="Remove";
