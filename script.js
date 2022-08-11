@@ -16,23 +16,24 @@ function addBookToLibrary(){
     let auth=prompt("Enter Author name!!");
     if(auth.length<1) return;
     let tempBook = new book(bookN, auth);
+    // console.log(tempBook.sta=1);
     arr.push(tempBook);
     update();
 }
 
 function removeBook(){
-    arr.splice(this.parentElement.id, 1);
+    arr.splice(this.parentElement.parentElement.id, 1);
     update();
 }
 
 function toggleR(){
-    if(arr[this.parentElement.id].sta==0){
-        arr[this.parentElement.id].sta=1;
+    if(arr[this.parentElement.parentElement.id].sta==0){
+        arr[this.parentElement.parentElement.id].sta=1;
         this.classList.toggle('read');
         this.textContent="Read";
     }
     else{
-        arr[this.parentElement.id].sta=0;
+        arr[this.parentElement.parentElement.id].sta=0;
         this.classList.toggle('read');
         this.textContent="Not Read";
     }
@@ -45,7 +46,7 @@ function createRow(i){
     t2.textContent=i+1;
     temp.appendChild(t2);
 
-    
+
     t2 = document.createElement("td");
     t2.textContent=arr[i].name;
     temp.appendChild(t2);
