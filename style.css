@@ -37,3 +37,12 @@ html {
   .read {
     background-color: aqua;
   }
+
+  #modal {
+    /* visibility: hidden; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* float: left; */
+    transform: translate(-50%, -50%);
+  }

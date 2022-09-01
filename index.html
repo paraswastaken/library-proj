@@ -18,6 +18,27 @@
             <th>Remove Button</th>
         </tr>
     </table>
+    <div id="modal">
+        <form action="">
+            <label for="bookName">Name of Book</label>
+            <input type="text" name="bookN" id="bookName">
+
+            <label for="authName">Author</label>
+            <input type="text" name="auth" id="authName">
+
+            <fieldset>
+                <legend>Read Status</legend>
+
+                <label for="read">Read</label>
+                <input type="radio" name="status" value="read" id="read">
+
+                <label for="notR">Not Read</label>
+                <input type="radio" name="status" value="unread" id="notR">
+            </fieldset>
+
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
     <div><button class="addBook">Add New Book</button></div>
 </body>
 </html>
