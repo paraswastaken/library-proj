@@ -13,15 +13,32 @@ let table = document.querySelector(".tab");
 let modal = document.getElementById("modal");
 let form = document.getElementById("form");
 
-addBookButton.addEventListener("click", addBookToLibrary);
+form.addEventListener('submit', takeInput);
+
+addBookButton.addEventListener("click", addBook);
 
 //Function to create a book object and add it to the library(array)
-function addBookToLibrary(){
+function addBook(){
     modal.classList.toggle('hide');
     // let tempBook = new book(bookN, auth);
     // console.log(tempBook.sta=1);
     // arr.push(tempBook);
+}
+
+function takeInput(event){
+    //validation
+
+
+    let bookN=form.elements['bookN'].value;
+    let auth=form.elements['auth'].value;
+    let stat=form.elements['status'].value;
+    console.log(bookN);
+    let tempBook = new book(bookN,auth);
+    arr.push(tempBook);
     update();
+    event.preventDefault();
+    form.reset();
+    modal.classList.toggle('hide');
 }
 
 //Function to remove a book
