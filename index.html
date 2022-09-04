@@ -18,8 +18,8 @@
             <th>Remove Button</th>
         </tr>
     </table>
-    <div id="modal">
-        <form action="">
+    <div id="modal" class="hide">
+        <form action="" method="post" id="form">
             <label for="bookName">Name of Book</label>
             <input type="text" name="bookN" id="bookName">
 
@@ -33,7 +33,7 @@
                 <input type="radio" name="status" value="read" id="read">
 
                 <label for="notR">Not Read</label>
-                <input type="radio" name="status" value="unread" id="notR">
+                <input type="radio" name="status" value="unread" id="notR" checked>
             </fieldset>
 
             <button type="submit">Add Book</button>

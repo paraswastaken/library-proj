@@ -10,18 +10,17 @@ function book(name, author){
 //initial query selectors
 let addBookButton = document.querySelector(".addBook");
 let table = document.querySelector(".tab");
+let modal = document.getElementById("modal");
+let form = document.getElementById("form");
 
 addBookButton.addEventListener("click", addBookToLibrary);
 
 //Function to create a book object and add it to the library(array)
 function addBookToLibrary(){
-    let bookN=prompt("Enter Book name!!");
-    if(bookN.length<1) return;
-    let auth=prompt("Enter Author name!!");
-    if(auth.length<1) return;
-    let tempBook = new book(bookN, auth);
+    modal.classList.toggle('hide');
+    // let tempBook = new book(bookN, auth);
     // console.log(tempBook.sta=1);
-    arr.push(tempBook);
+    // arr.push(tempBook);
     update();
 }
 
