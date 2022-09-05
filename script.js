@@ -32,14 +32,15 @@ function takeInput(event){
     let bookN=form.elements['bookN'].value;
     let auth=form.elements['auth'].value;
     let stat=form.elements['status'].value;
-    console.log(bookN);
+    // console.log(bookN);
     let tempBook = new book(bookN,auth);
-    arr.push(tempBook);
+    if(bookN && auth) arr.push(tempBook);
     update();
     event.preventDefault();
     form.reset();
     modal.classList.toggle('hide');
 }
+
 
 //Function to remove a book
 function removeBook(){

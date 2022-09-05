@@ -44,8 +44,24 @@ html {
     left: 50%;
     /* float: left; */
     transform: translate(-50%, -50%);
+    width: clamp(40em, 50em, 75ch);
   }
 
   .hide {
     visibility: hidden;
+  }
+
+  #shelf {
+    display: grid;
+    grid-template-columns: ;
+  }
+
+  .modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2 {
+    display: inline-block;
   }
