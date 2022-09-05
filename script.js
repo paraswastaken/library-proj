@@ -12,17 +12,25 @@ let addBookButton = document.querySelector(".addBook");
 let table = document.querySelector(".tab");
 let modal = document.getElementById("modal");
 let form = document.getElementById("form");
+let closeBut = document.getElementById("closemodal");
+
+
+closeBut.addEventListener("click", ()=>modal.classList.add("hide"));
+document.addEventListener("click", removeModal);
 
 form.addEventListener('submit', takeInput);
 
 addBookButton.addEventListener("click", addBook);
 
+function removeModal(x){
+    if(x.target==modal) {
+        modal.classList.add("hide");
+    }
+}
+
 //Function to create a book object and add it to the library(array)
 function addBook(){
-    modal.classList.toggle('hide');
-    // let tempBook = new book(bookN, auth);
-    // console.log(tempBook.sta=1);
-    // arr.push(tempBook);
+    modal.classList.remove('hide');
 }
 
 function takeInput(event){
@@ -40,6 +48,7 @@ function takeInput(event){
     form.reset();
     modal.classList.toggle('hide');
 }
+
 
 
 //Function to remove a book

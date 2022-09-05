@@ -42,23 +42,25 @@ html {
     position: fixed;
     top: 50%;
     left: 50%;
-    /* float: left; */
+    z-index: 1;
     transform: translate(-50%, -50%);
-    width: clamp(40em, 50em, 75ch);
+    width: clamp(320px, 30vw, 60rem);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
   .hide {
-    visibility: hidden;
+    display: none;
   }
 
   #shelf {
     display: grid;
-    grid-template-columns: ;
+    
   }
 
-  .modal-header {
-    width: 100%;
+  .header-modal {
+    min-width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
