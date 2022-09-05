@@ -27,22 +27,22 @@
             <button id="closemodal">x</button>
         </div>
         <form action="" method="post" id="form">
-            <label for="bookName">Name of Book</label>
-            <input type="text" name="bookN" id="bookName">
+            <div class="textData">
+                <label for="bookName">Name of Book</label>
+                <input type="text" name="bookN" id="bookName">
+                <label for="authName">Author</label>
+                <input type="text" name="auth" id="authName">
 
-            <label for="authName">Author</label>
-            <input type="text" name="auth" id="authName">
+                <fieldset>
+                    <legend>Read Status</legend>
+                    
+                    <label for="read">Read</label>
+                    <input type="radio" name="status" value="read" id="read">
 
-            <fieldset>
-                <legend>Read Status</legend>
-
-                <label for="read">Read</label>
-                <input type="radio" name="status" value="read" id="read">
-
-                <label for="notR">Not Read</label>
-                <input type="radio" name="status" value="unread" id="notR" checked>
-            </fieldset>
-
+                    <label for="notR">Not Read</label>
+                    <input type="radio" name="status" value="unread" id="notR" checked>
+                </fieldset>
+            </div>    
             <button type="submit">Add Book</button>
         </form>
     </div>

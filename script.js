@@ -1,10 +1,10 @@
 const arr=[];
 
 //Constructor for book object
-function book(name, author){
+function book(name, author, stat){
     this.name=name;
     this.author=author;
-    this.sta=false;
+    this.sta=(stat==="read")?true:false;
 }
 
 //initial query selectors
@@ -16,17 +16,10 @@ let closeBut = document.getElementById("closemodal");
 
 
 closeBut.addEventListener("click", ()=>modal.classList.add("hide"));
-document.addEventListener("click", removeModal);
 
 form.addEventListener('submit', takeInput);
 
 addBookButton.addEventListener("click", addBook);
-
-function removeModal(x){
-    if(x.target==modal) {
-        modal.classList.add("hide");
-    }
-}
 
 //Function to create a book object and add it to the library(array)
 function addBook(){
@@ -41,7 +34,7 @@ function takeInput(event){
     let auth=form.elements['auth'].value;
     let stat=form.elements['status'].value;
     // console.log(bookN);
-    let tempBook = new book(bookN,auth);
+    let tempBook = new book(bookN,auth,stat);
     if(bookN && auth) arr.push(tempBook);
     update();
     event.preventDefault();
